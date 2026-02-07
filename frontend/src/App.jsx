@@ -37,7 +37,7 @@ function App() {
   };
 
   const handleSend = async (e) => {
-      let response = await fetch('http://localhost:5000/sendmail', {
+      let response = await fetch('https://bulkmail-n64a.onrender.com/sendmail', {
         method:'POST', 
         headers:{'Content-Type' : 'application/json'}, 
         body:JSON.stringify({subject, message, emailList})

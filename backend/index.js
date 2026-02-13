@@ -33,22 +33,24 @@ app.post("/sendmail", (req, res) => {
   console.log("message - ", message);
   console.log("emailList - ", emailList);
 
-  mongo.connect(uri)
-  .then(() => {console.log('DB Connected')})
-  .catch((error) => {console.log('DB not Connected', error)});
-
-  model.find().then((data)=>{
-        const transporter = nodemailer.createTransport({
+  const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: data[0].toJSON().user,
-            pass: data[0].toJSON().pass,
+            user: 'poorani.d13@gmail.com',
+            pass: 'ipmg vybt yzon sacb',
         },
         tls: {
             rejectUnauthorized: false,
         },
     });
-  })
+
+  // mongo.connect(uri)
+  // .then(() => {console.log('DB Connected')})
+  // .catch((error) => {console.log('DB not Connected', error)});
+
+  // model.find().then((data)=>{
+        
+  // })
 
   new Promise(async (resolve, reject) => {
     try {

@@ -57,7 +57,7 @@ app.post("/sendmail", (req, res) => {
       for (let i = 0; i < emailList.length; i++) {
         console.log("inside for loop");
         await transporter.sendMail({
-          from: data[0].toJSON().user,
+          from: 'poorani.d13@gmail.com',
           to: emailList[i],
           subject: subject,
           text: message,

@@ -5,7 +5,7 @@ const mongo = require("mongoose");
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors());
 
 const username = "poorani_d13";
 const password = encodeURIComponent("Ginoraj@1506");
